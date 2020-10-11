@@ -1,0 +1,7 @@
+language: c
+before_install:
+    - test -n $CC && unset CC
+install:
+    - sudo apt-get -qq update
+    - sudo apt-get install -y libpcre-dev
+script: autoreconf -ivf && ./configure && make

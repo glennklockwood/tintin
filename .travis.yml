@@ -3,5 +3,5 @@ before_install:
     - test -n $CC && unset CC
 install:
     - sudo apt-get -qq update
-    - sudo apt-get install -y libpcre-dev
+    - sudo apt-get install -y libpcre3-dev zlib1g-dev
 script: autoreconf -ivf && ./configure && make

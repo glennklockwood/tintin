@@ -64,7 +64,7 @@
 #endif
 
 #ifndef BADSIG
-#define BADSIG (RETSIGTYPE (*)(int))-1
+#define BADSIG (void (*)(int))-1
 #endif
 
 #ifdef HAVE_NET_ERRNO_H

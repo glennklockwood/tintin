@@ -22,9 +22,9 @@ AC_CHECK_HEADERS([sys/param.h arpa/inet.h fcntl.h limits.h netdb.h netinet/in.h 
 
 AC_CHECK_HEADER([pcre.h], [], AC_MSG_FAILURE([pcre.h not found]))
 
+AC_CHECK_LIB([util], [forkpty])
 AC_CHECK_LIB([pcre], [pcre_compile], [], [AC_MSG_FAILURE([libpcre not found])])
 AC_CHECK_LIB([z], [pcre_compile], [], [AC_MSG_FAILURE([libpcre not found])])
-
 
 # Checks for typedefs, structures, and compiler characteristics.
 AC_CHECK_HEADER_STDBOOL
@@ -36,6 +36,6 @@ AC_TYPE_SIZE_T
 AC_FUNC_FORK
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS([dup2 gethostbyname gethostname gettimeofday inet_ntoa memmove memset mkdir pow select socket sqrt strcasecmp strchr strdup strerror strncasecmp strndup strstr utime])
+AC_CHECK_FUNCS([dup2 gethostbyname gethostname gettimeofday inet_ntoa memmove memset mkdir pow select socket sqrt strcasecmp strchr strdup strerror strncasecmp strndup strstr utime forkpty])
 
 AC_OUTPUT(Makefile src/Makefile)
